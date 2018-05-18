@@ -3,6 +3,6 @@ export default {
         state.question = question;
     },
     loadQuestions(state, questions){
-        // state.
+        state.questions = questions;
     }
 };
