@@ -1,7 +1,7 @@
 import * as api from '../api';
 import throttle from 'lodash/throttle';
 
-const submitQuestion = throttle(api.submitQuestion, 3000);
+const submitQuestion = throttle(api.submitQuestion, 2000);
 export const setQuestion = ({commit}, payload) => {
     commit('setQuestion', payload);
     if(payload.length > 3) {
