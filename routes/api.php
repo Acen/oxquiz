@@ -17,6 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/questions', function (Request $request) {
-   dd($request->all());
-});
+Route::get('/questions', 'SearchController@questions');

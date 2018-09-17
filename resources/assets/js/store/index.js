@@ -9,6 +9,7 @@ Vue.use(Vuex);
 const state = {
     question: null,
     questions: [],
+    user: null,
 };
 
 export default new Vuex.Store({
