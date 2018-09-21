@@ -9,6 +9,9 @@
     </head>
     <body>
         <div id="app">
+            @auth
+                <user :user='@json(Auth::user())'></user>
+            @endauth
             <el-container>
                 <el-header><heading></heading></el-header>
                 <el-main><router-view></router-view></el-main>
