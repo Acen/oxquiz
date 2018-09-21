@@ -13,6 +13,7 @@ their correct true/false answers.
 * Vuex
 * VueRouter
 * [Element](http://element.eleme.io/#/en-US)
+* [VueMC](https://vuemc.io)
 
 ### Author
 Zac Bruce
