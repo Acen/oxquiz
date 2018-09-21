@@ -9,7 +9,7 @@
                 </el-form-item>
                 <el-form-item
                     :error="registration.errors.email">
-                    <label for="email">Email</label>
+                    <label for="email">Email <small>- Used to login</small></label>
                     <el-input id="email" v-model="registration.email" placeholder="email@example.com" required></el-input>
                 </el-form-item>
                 <el-form-item
@@ -45,7 +45,11 @@
             submit(){
                 this.registration.save()
                     .then(() => {
-                        this.login(this.registration);
+                        // Login User
+                        if(this.login(this.registration)){
+                            // Redirect back to home.
+                            this.$router.push({name: 'search'});
+                        }
                     })
                     .catch(() => {});
             },

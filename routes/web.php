@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
-Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::get('/check', function(Illuminate\Http\Request $request){
     dd($request->user());
 });

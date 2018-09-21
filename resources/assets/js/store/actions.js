@@ -18,8 +18,6 @@ export const setQuestion = ( {commit, state}, payload, callback ) => {
     }
 };
 
-export const login = ( {commit, state}, payload, callback ) => {
-    console.log(payload);
-    commit('login', _.pick(payload, ['name', 'email', 'id']));
-    // this.$router.push({path: 'search'});
+export const login = ( {commit}, user ) => {
+    commit('login', _.pick(user, ['name', 'id']));
 };

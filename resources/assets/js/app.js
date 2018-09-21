@@ -8,6 +8,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 
 // Components
 import Heading from './components/Heading';
+import User from './components/User';
 
 // CSS
 import 'element-ui/lib/theme-chalk/index.css'
@@ -28,5 +29,6 @@ const app = new Vue({
     router,
     components: {
         Heading,
+        User,
     },
 });
