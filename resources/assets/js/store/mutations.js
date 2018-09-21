@@ -1,11 +1,18 @@
 /**
- * Mutations storing a property returning from something to be saved into the Vue Store.
+ * Mutations - storing a property into the Vue Store.
  */
 export default {
-    setQuestion(state, question){
+    setQuestion( state, question ) {
         state.question = question;
     },
-    loadQuestions(state, questions){
+    loadQuestions( state, questions ) {
         state.questions = questions;
     },
+    login( state, user ) {
+        state.user = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+        };
+    }
 };

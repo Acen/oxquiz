@@ -2,24 +2,28 @@
     <el-row type="flex" justify="center">
         <el-col :span="8">
             <el-form>
-                <el-form-item>
-                    <label for="username">Username</label>
-                    <el-input id="username" v-model="username" placeholder="Foreplay" required></el-input>
+                <el-form-item
+                        :error="registration.errors.display_name">
+                    <label for="name">Display Name</label>
+                    <el-input id="name" v-model="registration.name" placeholder="Foreplay" required></el-input>
                 </el-form-item>
-                <el-form-item>
+                <el-form-item
+                    :error="registration.errors.email">
                     <label for="email">Email</label>
-                    <el-input id="email" v-model="email" placeholder="email@example.com" required></el-input>
+                    <el-input id="email" v-model="registration.email" placeholder="email@example.com" required></el-input>
                 </el-form-item>
-                <el-form-item>
+                <el-form-item
+                        :error="registration.errors.password">
                     <label for="password">Password</label>
-                    <el-input id="password" v-model="password" type="password" required></el-input>
+                    <el-input id="password" v-model="registration.password" type="password" required></el-input>
                 </el-form-item>
-                <el-form-item>
+                <el-form-item
+                        :error="registration.errors.password_confirmation">
                     <label for="password-repeat"></label>
-                    <el-input id="password-repeat" v-model="password_repeat" type="password" required></el-input>
+                    <el-input id="password-repeat" v-model="registration.password_confirmation" type="password" required></el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="submit" @click="registerUser()" :span="24" :loading="loading">Register</el-button>
+                    <el-button type="submit" @click="submit()" :span="24" :loading="registration.saving">Register</el-button>
                 </el-form-item>
             </el-form>
         </el-col>
@@ -28,39 +32,26 @@
 
 <script>
     import { mapActions } from 'vuex';
+    import Registration from '../../models/Registration';
 
     export default {
-        name   : "Register",
+        name    : "Register",
         data() {
             return {
-                'username'       : '',
-                'email'          : '',
-                'password'       : '',
-                'password_repeat': '',
-                loading: false,
+                registration: new Registration(),
             };
         },
-        methods: {
-            registerUser() {
-                this.loading = true;
-                if(this.passwordFilled){
-                    // cont
-                }else {
-                    // this.loading = false;
-                }
+        methods : {
+            submit(){
+                this.registration.save()
+                    .then(() => {
+                        this.login(this.registration);
+                    })
+                    .catch(() => {});
             },
             ...mapActions([
-                'register',
-            ])
-        },
-        computed: {
-            passwordFilled(){
-                return this.password.length && (this.password === this.password_repeat);
-            }
+                'login',
+            ]),
         },
     };
 </script>
-
-<style scoped>
-
-</style>
