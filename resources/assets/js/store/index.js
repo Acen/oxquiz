@@ -10,6 +10,7 @@ const state = {
     question: null,
     questions: [],
     user: null,
+    notifications: [],
 };
 
 export default new Vuex.Store({

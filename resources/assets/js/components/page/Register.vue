@@ -46,12 +46,14 @@
                 this.registration.save()
                     .then(() => {
                         // Login User
-                        if(this.login(this.registration)){
+                        this.login(this.registration).then(() =>{
                             // Redirect back to home.
                             this.$router.push({name: 'search'});
-                        }
+                        });
                     })
-                    .catch(() => {});
+                    .catch((error) => {
+                        console.error('registration.save', error);
+                    });
             },
             ...mapActions([
                 'login',

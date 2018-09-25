@@ -3,6 +3,7 @@
         <el-menu-item index="search" route="/">Search</el-menu-item>
         <template v-if="user">
             <el-menu-item index="profile" route="/profile">Profile: {{ user.name }}</el-menu-item>
+            <el-menu-item index="logout" @click="handleLogout">Logout</el-menu-item>
         </template>
         <template v-else>
             <el-menu-item index="login" route="/login">Login</el-menu-item>
@@ -12,14 +13,24 @@
 </template>
 
 <script>
-    import { mapState } from 'vuex';
+    import { mapState, mapActions } from 'vuex';
     export default {
         name: "Navigation",
         computed: {
             ...mapState([
                 'user',
-            ])
+            ]),
         },
+        methods: {
+            handleLogout() {
+                this.logout().then(() => {
+                    this.$router.push({name: 'search'});
+                });
+            },
+            ...mapActions([
+                'logout',
+            ]),
+        }
     };
 </script>
 

@@ -12,10 +12,7 @@
             @auth
                 <user :user='@json(Auth::user())'></user>
             @endauth
-            <el-container>
-                <el-header><heading></heading></el-header>
-                <el-main><router-view></router-view></el-main>
-            </el-container>
+            <application></application>
         </div>
         <script src="{{ mix('js/manifest.js') }}"></script>
         <script src="{{ mix('js/vendor.js') }}"></script>

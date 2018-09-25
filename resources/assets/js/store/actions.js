@@ -19,5 +19,18 @@ export const setQuestion = ( {commit, state}, payload, callback ) => {
 };
 
 export const login = ( {commit}, user ) => {
-    commit('login', _.pick(user, ['name', 'id']));
+    commit('LOGIN', _.pick(user, ['name', 'id']));
+};
+
+export const logout = ({commit}) => {
+    commit('LOGOUT');
+    commit('ADD_NOTIFICATION', _.uniqueId(), 'Logged out successfully.', 'info');
+};
+
+export const dismissNotification = ({commit, state}, notificationId ) => {
+    console.log('dismissNotification', notificationId);
+    const notificationIndex = _.findIndex(state.notifications, (n) => {
+        return n.id === notificationId;
+    });
+    commit('REMOVE_NOTIFICATION', notificationIndex);
 };

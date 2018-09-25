@@ -7,7 +7,6 @@
             <navigation></navigation>
         </el-col>
     </el-row>
-    
 </template>
 
 <script>
