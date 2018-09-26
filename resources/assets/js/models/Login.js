@@ -7,18 +7,18 @@ export default class Login extends Model
     // Default values set on instantiation.
     defaults() {
         return {
-            id                   : null,
-            email                : '',
-            password             : '',
+            id      : null,
+            email   : '',
+            password: '',
         };
     }
 
     // Validation rules for pre-submission.
     validation() {
         return {
-            email                : required.and(string)
-                                           .and(email),
-            password             : required.and(string),
+            email   : required.and(string)
+                              .and(email),
+            password: required.and(string),
         };
     }
 

@@ -17,11 +17,11 @@ export default {
     LOGOUT( state ) {
         state.user = null;
     },
-    ADD_NOTIFICATION( state, uniqueId, message, type ) {
+    ADD_NOTIFICATION( state, notification ) {
         state.notifications.push({
-            id     : uniqueId,
-            message: message,
-            type   : type,
+            id     : notification.id,
+            message: notification.message,
+            type   : notification.type,
         });
     },
     REMOVE_NOTIFICATION( state, index ) {

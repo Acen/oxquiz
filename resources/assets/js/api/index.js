@@ -11,3 +11,7 @@ export function submitQuestion(part, callback, errHandler){
     }).then(callback)
       .catch(errHandler);
 }
+
+export function logoutUser(){
+    return axios.get('/logout');
+}

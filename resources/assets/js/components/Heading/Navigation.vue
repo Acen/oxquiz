@@ -14,18 +14,20 @@
 
 <script>
     import { mapState, mapActions } from 'vuex';
+
     export default {
-        name: "Navigation",
+        name    : "Navigation",
         computed: {
             ...mapState([
                 'user',
             ]),
         },
-        methods: {
+        methods : {
             handleLogout() {
-                this.logout().then(() => {
-                    this.$router.push({name: 'search'});
-                });
+                this.logout()
+                    .then(() => {
+                        this.$router.push({name: 'search'});
+                    });
             },
             ...mapActions([
                 'logout',
@@ -35,8 +37,8 @@
 </script>
 
 <style scoped>
-    .el-menu{
-        float: right;
+    .el-menu {
+        float:         right;
         border-bottom: none;
     }
 </style>

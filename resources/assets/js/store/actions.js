@@ -22,15 +22,30 @@ export const login = ( {commit}, user ) => {
     commit('LOGIN', _.pick(user, ['name', 'id']));
 };
 
-export const logout = ({commit}) => {
-    commit('LOGOUT');
-    commit('ADD_NOTIFICATION', _.uniqueId(), 'Logged out successfully.', 'info');
+export const logout = ( {commit} ) => {
+    api.logoutUser()
+       .then(() => {
+           commit('LOGOUT');
+           commit('ADD_NOTIFICATION', {
+               id     : _.uniqueId(),
+               message: 'Logged out successfully.',
+               type   : 'info',
+           });
+        })
+        .catch((error) => {
+            commit('ADD_NOTIFICATION', {
+                id     : _.uniqueId(),
+                message: 'Log out failed. Please refresh and try again.',
+                type   : 'error',
+            });
+            console.error(error);
+        });
+
 };
 
-export const dismissNotification = ({commit, state}, notificationId ) => {
-    console.log('dismissNotification', notificationId);
-    const notificationIndex = _.findIndex(state.notifications, (n) => {
-        return n.id === notificationId;
+export const dismissNotification = ( {commit, state}, id ) => {
+    const notificationIndex = _.findIndex(state.notifications, ( n ) => {
+        return n.id === id;
     });
     commit('REMOVE_NOTIFICATION', notificationIndex);
 };

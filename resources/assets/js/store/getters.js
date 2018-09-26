@@ -1,5 +1,5 @@
 export default {
-    questionsCount: (state) => {
-        return state.questions.length;
+    hasNotifications: (state) => {
+        return state.notifications.length > 0;
     }
 }
