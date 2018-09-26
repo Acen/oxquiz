@@ -5,7 +5,7 @@
                 <label for="question" class="el-form-item__label">What's the question?</label>
                 <el-popover placement="bottom" :width="question_width">
                     <p>Hi there</p>
-                    <el-input slot="reference" id="question" clearable placeholder="Something about cockroachs." v-model="question" :prefix-icon="loading"></el-input>
+                    <el-input slot="reference" id="question" clearable placeholder="Something about cockroaches." v-model="question" :prefix-icon="loading"></el-input>
                 </el-popover>
 
             </el-col>
