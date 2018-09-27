@@ -1,5 +1,5 @@
 <template>
-    
+    <p>Stats incoming.</p>
 </template>
 
 <script>
