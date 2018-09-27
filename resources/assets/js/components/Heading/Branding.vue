@@ -9,8 +9,9 @@
 </script>
 
 <style scoped>
-    .branding{
-        line-height: 60px;
+    .branding {
+        display:        inline-block;
+        line-height:    60px;
         vertical-align: top;
     }
 </style>

@@ -8,10 +8,23 @@ export default {
     loadQuestions( state, questions ) {
         state.questions = questions;
     },
-    login( state, user ) {
+    LOGIN( state, user ) {
         state.user = {
-            id: user.id,
+            id  : user.id,
             name: user.name,
         };
-    }
+    },
+    LOGOUT( state ) {
+        state.user = null;
+    },
+    ADD_NOTIFICATION( state, notification ) {
+        state.notifications.push({
+            id     : notification.id,
+            message: notification.message,
+            type   : notification.type,
+        });
+    },
+    REMOVE_NOTIFICATION( state, index ) {
+        state.notifications.splice(index, 1);
+    },
 };

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Vuex from "vuex";
+import Vuex from 'vuex';
 import * as actions from './actions';
 import mutations from './mutations'
 import getters from './getters';
@@ -10,6 +10,7 @@ const state = {
     question: null,
     questions: [],
     user: null,
+    notifications: [],
 };
 
 export default new Vuex.Store({

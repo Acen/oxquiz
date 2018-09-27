@@ -7,7 +7,7 @@ import Element from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/en'
 
 // Components
-import Heading from './components/Heading';
+import Application from './components/Application';
 import User from './components/User';
 
 // CSS
@@ -28,7 +28,7 @@ const app = new Vue({
     store,
     router,
     components: {
-        Heading,
+        Application,
         User,
     },
 });
