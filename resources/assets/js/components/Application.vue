@@ -5,9 +5,13 @@
         </el-header>
         <el-container>
             <el-header v-if="hasNotifications">
-                <template v-for="notification in notifications">
-                    <notification :notification="notification"></notification>
-                </template>
+                <el-row type="flex" justify="center">
+                    <el-col :span="12">
+                        <template v-for="notification in notifications">
+                            <notification :notification="notification"></notification>
+                        </template>
+                    </el-col>
+                </el-row>
             </el-header>
             <el-main>
                 <router-view></router-view>
@@ -39,5 +43,11 @@
 </script>
 
 <style scoped>
-
+    .el-container{
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .el-header{
+        height:20px;
+    }
 </style>
