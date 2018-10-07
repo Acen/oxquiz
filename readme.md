@@ -8,7 +8,7 @@ correct than others, this service looks to crowdsource questions and
 their correct true/false answers.
 
 ### Technology
-* Laravel 5.5
+* Laravel 5.7
 * Vue
 * Vuex
 * VueRouter

@@ -5,8 +5,8 @@
             <p>This OX Quiz helper service has been created so that we can win together.</p>
             <h3>Watchu mean?</h3>
             <p>Practically, Maplestory 2 has a mini-game available based around the infamous true/false style GameMaster event that Maplestory 1 had.</p>
-            <p>The players get asked a question, and then there's a pretty simple true or false answer required. The problem though, is that the less knowledgeable of us, don't know the answers. And the questions have been written in a way that makes them insane-hard to Google.</p>
-            <p>One of the nice benefits of this system that Nexon has made, is that even if every single player wins, there aren't any terrible losses or negative effects for anyone. More winners is just better for everyone.</p>
+            <p>The players get asked a question, and then there's a pretty simple true or false answer required. The problem though, is that the less knowledgeable of us don't know the answers, while the questions have been written in a way that makes them insane-hard to Google.</p>
+            <p>One of the nice benefits of this system that Nexon has made, is that even if every single player wins, there aren't any terrible losses or negative effects for anyone. More winners is just better.</p>
             <p>And thus, this derpy service was born. We crowdsource the questions and answers. We win together.</p>
             <h3>What's in it for you, random author of website!? Trying to hack monies!??!??!</h3>
             <p>I'm just a dirty PHP developer that works in Laravel and VueJS. There's a cool part of this website in terms of developmentness that uses a Vue feature called VueX. If you've done any React development, then it's a similar system to Redux.</p>

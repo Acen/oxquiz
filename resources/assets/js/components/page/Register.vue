@@ -51,8 +51,12 @@
         },
         methods : {
             getError(key){
-                if(this.registration.errors[key] && this.registration.errors[key].length > 0){
-                    return _.first(this.registration.errors[key]);
+                if(this.registration.errors[key]){
+                    if(_.isArray(this.registration.errors[key])){
+                        return _.first(this.registration.errors[key]);
+                    }else{
+                        return this.registration.errors[key];
+                    }
                 }
             },
             submit() {
